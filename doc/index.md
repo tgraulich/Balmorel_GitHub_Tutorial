@@ -28,7 +28,7 @@ For Balmorel we have mainly to of these repositories:
 
 To start, we need to make **our own copy** of these repositories and transfer them to our **own Computer** or the **HPC**.
 
-:::{figure} ../forking_cloning.png
+:::{figure} forking_cloning.png
 :alt: Illustration of the concepts of **forking** and **cloning** and the recommended workflow for Balmorel: **forking** then **cloning**.
 :width: 100%
 
@@ -62,7 +62,7 @@ In this case you will download the repositories as a **.zip** file from GitHub:
 1. Go to the Balmorel GitHub repository.
 1. **Make sure the URL says `https://github.com/USER/Balmorel`, where `USER` is your username.**
 1. Download the repository:
-:::{figure} ../GitHub_clone.png
+:::{figure} GitHub_clone.png
 :width: 100%
 :::
 4. Extract the folder to a location of your choice.
