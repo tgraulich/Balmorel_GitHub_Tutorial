@@ -100,7 +100,7 @@ comfortable with the command line already.**
 
 You need to have forked the repository as described above.
 
-We need to start by making a clone of this repository so that you can work
+We need to start by m testaking a clone of this repository so that you can work
 locally.
 
 1. Start the terminal in which you use Git (terminal application, or
