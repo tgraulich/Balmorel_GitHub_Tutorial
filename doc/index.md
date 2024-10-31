@@ -1,7 +1,7 @@
 # Balmorel GitHub Tutorial
 
 This tutorial will show, how to work with **Balmorel** on **GitHub**. It will cover the basic steps of:
-- **Forking** the **Balmorel** and **Balmorel_data**
+- **Forking** the **Balmorel** and **Balmorel_data** repository.
 - **Cloning** the repository to your **local PC** or **HPC** and setting up the folder structure
 - **Commiting** changes and pushing them upstream to your **remote repository**
 - Creating your own **branch**
@@ -117,26 +117,20 @@ locally.
 ::::::
 
 
-:::{admonition} Exercise: Browsing an existing project (20 min)
+:::{admonition} Exercise: Browsing and editing the repositories (10 min)
 
-Browse the [example project](https://github.com/workshop-material/planets) and
-explore commits and branches, either on a fork or on a clone.  Take notes and
-prepare questions.  The hints are for the GitHub path in the browser.
+Browse the [Balmorel repository](https://github.com/balmorelcommunity/Balmorel) either on GitHub or your local PC and explore commits and branches. Take notes and
+prepare questions. The hints are for the GitHub path in the browser.
 
 1. Browse the **commit history**: Are commit messages understandable?
    (Hint: "Commit history", the timeline symbol, above the file list)
-1. Compare the commit history with the **network graph** ("Insights" -> "Network"). Can you find the branches?
-1. Try to find the **history of commits for a single file**, e.g. `simulate.py`.
+1. Try to find the **history of commits for a single file**, e.g. `base/output/OUTPUT_SUMMARY.inc`.
    (Hint: "History" button in the file view)
-1. **Which files include the word "position"**?
-   (Hint: the GitHub search on top of the repository view)
-1. In the `simulate.py` file,
-   find out who modified the "gravitational constant"
-   last and **in which commit**.
+1. **Which files creates the MainResults.gdx file**?
+   (Hint: the GitHub search on top of the repository view, look for execute_unload `"MainResults.gdx"`)
+1. In the `base/output/OUTPUT_SUMMARY.inc` file,
+   find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
    (Hint: "Blame" view in the file view)
-1. Can you use this code yourself? **Are you allowed to share
-   modifications**?
-   (Hint: look for a license file)
 :::
 
 The solution below goes over most of the answers, and you are
@@ -324,24 +318,3 @@ $ git blame simulate.py
 ::::
 
 :::::
-
-
-### (6) Can you use this code yourself? Are you allowed to share modifications?
-
-- Look at the file `LICENSE`.
-- On GitHub, click on the file to see a nice summary of what we can do with this:
-  :::{figure} img/browsing/license.png
-  :alt: Screenshot on GitHub summarizing license terms
-  :width: 100%
-  :class: with-border
-  :::
-
-
-### Summary
-
-- Git allowed us to understand this simple project much better than we
-  could, if it was just a few files on our own computer.
-- It was easy to share the project with the course.
-- By forking the repository, we created our own copy. This is
-  important for the following, where we will make changes to
-  our copy.
