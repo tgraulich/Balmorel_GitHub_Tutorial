@@ -137,7 +137,7 @@ The solution below goes over most of the answers, and you are
 encouraged to use it when the hints aren't enough - this is by
 design.
 
-
+<!---
 ## Solution and walk-through now
 
 ### (1) Basic browsing
@@ -317,4 +317,5 @@ $ git blame simulate.py
 ```
 ::::
 
-:::::
+:::::--->
+
