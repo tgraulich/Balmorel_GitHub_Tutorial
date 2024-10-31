@@ -7,7 +7,6 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 extensions = [
     "myst_parser",  # in order to use markdown
-    "sphinx_tabs.tabs",
 ]
 
 myst_enable_extensions = [
