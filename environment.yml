@@ -1,0 +1,8 @@
+name: Balmorel_GitHub_tutorial
+channels:
+  - conda-forge
+dependencies:
+  - myst-parser
+  - sphinx
+  - sphinx-rtd-theme
+  - sphinx-autoapi
