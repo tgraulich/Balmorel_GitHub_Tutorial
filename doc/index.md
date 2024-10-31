@@ -1,20 +1,11 @@
-(browsing)=
+# Balmorel GitHub Tutorial
 
-# Forking, cloning, and browsing
-
-In this episode, we will look at an **existing repository** to understand how
-all the pieces work together. Along the way, we will make a copy (by
-**forking** and/or **cloning**) of the repository for us, which will be used
-for our own changes.
-
-:::{objectives}
-- See a real Git repository and understand what is inside of it.
-- Understand how version control allows advanced inspection of a
-  repository.
-- See how Git allows multiple people to work on the same project at the same time.
-- **See the big picture** instead of remembering a bunch of commands.
-:::
-
+This tutorial will show, how to work with **Balmorel** on **GitHub**. It will cover the basic steps of:
+- **Forking** the **Balmorel** and **Balmorel_data**
+- **Cloning** the repository to your **local PC** or **HPC** and setting up the folder structure
+- **Commiting** changes and pushing them upstream to your **remote repository**
+- Creating your own **branch**
+- Making a **pull request** to merge into the **master branch**
 
 ## GitHub, VS Code, or command line
 
@@ -31,67 +22,53 @@ GitHub repository is GitHub's copy, which adds things like access control,
 issue tracking, and discussions.  Each GitHub repository is owned by a user or
 organization, who controls access.
 
-First, we need to make **our own copy** of the exercise repository. This will
-become important later, when we make our own changes.
+For Balmorel we have mainly to of these repositories:
+- <https://github.com/balmorelcommunity/Balmorel>, which contains the model formulation and addons
+- <https://github.com/balmorelcommunity/Balmorel_data>, which contains all the data needed to run the model
 
-:::{figure} img/illustrations/fork.png
-:alt: Illustration of forking a repository on GitHub
-:width: 50%
+To start, we need to make **our own copy** of these repositories and transfer them to our **own Computer** or the **HPC**.
 
-Illustration of forking a repository on GitHub.
-:::
+:::{figure} ../forking_cloning.png
+:alt: Illustration of the concepts of **forking** and **cloning** and the recommended workflow for Balmorel: **forking** then **cloning**.
+:width: 100%
 
-:::{figure} img/illustrations/clone.png
-:alt: Illustration of cloning a repository to your computer
-:width: 50%
-
-Illustration of cloning a repository to your computer.
-:::
-
-:::{figure} img/illustrations/clone-of-fork.png
-:alt: Illustration of cloning a forked repository to your computer
-:width: 60%
-
-It is also possible to do this: to clone a forked repository to your computer.
+Illustration of the concepts of **forking** and **cloning** and the recommended workflow for Balmorel: **forking** then **cloning**.
 :::
 
 At all times you should be aware of if you are looking at **your repository**
 or the **upstream repository** (original repository):
-- Your repository: https://github.com/**USER**/planets
-- Upstream repository: https://github.com/**workshop-material**/planets
+- Your repository: https://github.com/**USER**/Balmorel
+- Upstream repository: https://github.com/**balmorelcommunity**/Balmorel
 
 :::{admonition} How to create a fork
-1. Go to the repository view on GitHub: <https://github.com/workshop-material/planets>
+1. Go to the repository view on GitHub: <https://github.com/balmorelcommunity/Balmorel>
 1. First, on GitHub, click the button that says "Fork". It is towards
    the top-right of the screen.
 1. You should shortly be redirected to your copy of the repository
-   **USER/planets**.
+   **USER/Balmorel**.
+1. Repeat the same step for the <https://github.com/balmorelcommunity/Balmorel_data> repository.
 :::
 
 
-## Exercise: Copy and browse an existing project
+## Exercise: Copy (clone) the repositories and setup the correct folder structure
 
 Work on this by yourself or in pairs.
 
-
-
-
-
-
-
-
-
-
-
-
-::::::{prereq} Exercise preparation
+::::::{admonition} Exercise preparation
 :::::{tabs}
 ::::{group-tab} GitHub
-In this case you will work on a fork.
+In this case you will download the repositories as a **.zip** file from GitHub:
 
-You only need to open your own view, as described above.  The browser
-URL should look like https://github.com/**USER**/planets, where
-USER is your GitHub username.
+1. Go to the Balmorel GitHub repository.
+1. **Make sure the URL says `https://github.com/USER/Balmorel`, where `USER` is your username.**
+1. Download the repository:
+:::{figure} ../GitHub_clone.png
+:width: 100%
+:::
+4. Extract the folder to a location of your choice.
+5. Download the `https://github.com/USER/Balmorel_data` repository the same way (**Make sure you are cloning your forked repository**).
+6. Extract the files into the local copy of the **Balmorel** repository, to the same level as the **base** folder.
+7. Rename the `Balmorel_data` folder to `data`.
 ::::
 
 ::::{group-tab} VS Code
@@ -105,12 +82,15 @@ locally.
 open), go to File → New Window.
 1. Under "Start" on the screen, select "Clone Git Repository...". Alternatively
    navigate to the "Source Control" tab on the left sidebar and click on the "Clone Repository" button.
-1. Paste in this URL: `https://github.com/USER/planets`, where
+1. Paste in this URL: `https://github.com/USER/Balmorel`, where
    `USER` is your username.  You can copy this from the browser.
 1. Browse and select the folder in which you want to clone the
    repository.
 1. Say yes, you want to open this repository.
 1. Select "Yes, I trust the authors" (the other option works too).
+1. Repeat the same process for `https://github.com/USER/Balmorel_data` until you have to choose the location.
+1. Select the `.../Balmorel/` and clone the data to this location.
+1. Rename the `Balmorel_data` folder to `data`.
 ::::
 
 ::::{group-tab} Command line
@@ -128,17 +108,16 @@ locally.
 1. Change to the directory where you would want the repository to be
    (`cd ~/code` for example, if the `~/code` directory is where you
    store your files).
-1. Run the following command: `git clone
-   https://github.com/USER/planets`, where `USER` is your
-   username.  You might need to use a SSH clone command instead of
-   HTTPS, depending on your setup.
-1. Change to that directory: `cd planets`
+1. Run the following command: `git clone https://github.com/USER/Balmorel`, where `USER` is your username.  You might need to use a SSH clone command instead of HTTPS, depending on your setup.
+1. Change to that directory: `cd Balmorel`
+1. Run the following command: `git clone https://github.com/USER/Balmorel_data`, where `USER` is your username.
+1. Rename the `Balmorel_data` folder to `data` by typing the following command: `mv Balmorel_data data`.
 ::::
 :::::
 ::::::
 
 
-:::{exercise} Exercise: Browsing an existing project (20 min)
+:::{admonition} Exercise: Browsing an existing project (20 min)
 
 Browse the [example project](https://github.com/workshop-material/planets) and
 explore commits and branches, either on a fork or on a clone.  Take notes and
