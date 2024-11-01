@@ -348,7 +348,7 @@ The goal is to:
 :::{admonition} Exercise: Practice creating commits and branches (20 min)
 1. First create a new branch and then modify an
    existing file and commit the change.  Make sure that you now work **on your
-   copy** of the repository. You can for example change the years in the simulation by editing the `YYY.inc` file.
+   copy** of the repository. You can for example change the years in the simulation by editing the `Y.inc` file.
 1. In a new commit, modify the file again.
 1. Switch to the `main` branch and create a commit there.
 1. Browse the network and locate the commits that you just created ("Insights" -> "Network").
