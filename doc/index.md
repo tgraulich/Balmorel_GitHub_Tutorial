@@ -67,7 +67,7 @@ In this case you will download the repositories as a **.zip** file from GitHub:
 :::
 4. Extract the folder to a location of your choice.
 5. Download the `https://github.com/USER/Balmorel_data` repository the same way (**Make sure you are cloning your forked repository**).
-6. Extract the files into the local copy of the **Balmorel** repository, to the same level as the **base** folder.
+6. Extract the files into the local copy of the **Balmorel** repository, into the **base** folder.
 7. Rename the `Balmorel_data` folder to `data`.
 ::::
 
