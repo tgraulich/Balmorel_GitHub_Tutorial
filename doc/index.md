@@ -23,8 +23,8 @@ issue tracking, and discussions.  Each GitHub repository is owned by a user or
 organization, who controls access.
 
 For Balmorel we have mainly to of these repositories:
-- <https://github.com/balmorelcommunity/Balmorel>, which contains the model formulation and addons
-- <https://github.com/balmorelcommunity/Balmorel_data>, which contains all the data needed to run the model
+- <https://github.com/balmorelcommunity/Balmorel>, which contains the framework, e.g. mathematical formulations and addons.
+- <https://github.com/balmorelcommunity/Balmorel_data>, which contains all the data needed to run the model.
 
 To start, we need to make **our own copy** of these repositories and transfer them to our **own Computer** or the **HPC**.
 
