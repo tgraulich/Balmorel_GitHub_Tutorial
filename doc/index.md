@@ -1,4 +1,4 @@
-# Balmorel GitHub Tutorial
+# [Balmorel GitHub Tutorial](https://github.com/tgraulich/Balmorel_GitHub_Tutorial)
 
 This tutorial will show, how to work with **Balmorel** on **GitHub**. It will cover the basic steps of:
 - **Forking** the **Balmorel** and **Balmorel_data** repository.
