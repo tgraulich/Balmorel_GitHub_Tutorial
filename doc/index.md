@@ -127,7 +127,7 @@ prepare questions. The hints are for the GitHub path in the browser.
 1. Try to find the **history of commits for a single file**, e.g. `base/output/OUTPUT_SUMMARY.inc`.
    (Hint: "History" button in the file view)
 1. **Which files creates the MainResults.gdx file**?
-   (Hint: the GitHub search on top of the repository view, look for execute_unload `"MainResults.gdx"`)
+   (Hint: the GitHub search on top of the repository view, look for `execute_unload "MainResults.gdx"`)
 1. In the `base/output/OUTPUT_SUMMARY.inc` file,
    find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
    (Hint: "Blame" view in the file view)
