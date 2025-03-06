@@ -1,6 +1,6 @@
 (intro)= 
 
-# Introduction to version control with Git and GitHub
+# Balmorel GitHub Tutorial
 
 ```{toctree}
 :maxdepth: 1

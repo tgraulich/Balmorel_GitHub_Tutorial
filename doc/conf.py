@@ -15,3 +15,6 @@ myst_enable_extensions = [
 ]
 
 html_theme = "sphinx_rtd_theme"
+
+def setup(app):
+    app.add_css_file('css_options.css')  # may also be an URL

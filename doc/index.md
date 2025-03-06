@@ -851,5 +851,6 @@ repository.
 :caption: Balmorel GitHub Tutorial
 :hidden:
 
-intro
+browsing
+branching
 ```
