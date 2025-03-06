@@ -850,6 +850,5 @@ repository.
 :maxdepth: 1
 :caption: Balmorel GitHub Tutorial
 :hidden:
-browsing
-branching
+intro
 ```
