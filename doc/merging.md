@@ -15,7 +15,7 @@ Goals for this section:
   the upstream public repository.
 
 
-## Exercise
+## Exercise: Merging & contributing to the main repository
 
 
 ::::::{admonition} Exercise: Merging branches
@@ -35,7 +35,7 @@ as needed.
 1. Begin the pull request process
    (hint: There is a "Contribute" button in the branch view).
 
-1. Add or modify the pull request title and description, and verify the other data.
+1. **(Only GitHub)** Add or modify the pull request title and description, and verify the other data.
    In the pull request verify the target repository and the target
    branch. Make sure that you are merging within your own repository.
    **GitHub: By default, it will offer to make the change to the
@@ -43,7 +43,7 @@ as needed.
    shouldn't contribute your commit(s) upstream yet.  Where it says
    `base repository`, select your own repository.
 
-1. Create the pull request by clicking "Create pull request". Browse
+1. **(Only GitHub)** Create the pull request by clicking "Create pull request". Browse
    the network view to see if anything has changed yet.
 
 1. Merge the pull request, or if you are not on GitHub you can merge
@@ -82,7 +82,7 @@ Then:
 ::::
 :::::
 ::::::
-<!---
+
 The solution below goes over most of the answers, and you are
 encouraged to use it when the hints aren't enough - this is by design.
 
@@ -98,7 +98,7 @@ frustrated because they forgot this!
 :::::{tabs}
 ::::{group-tab} GitHub
 GitHub will notice a recently changed branch and offer to make a pull request (clicking there will bring you to step 3):
-   :::{figure} img/merging/github-compare-and-pr.png
+   :::{figure} pull_request.png
    :alt: Screenshot on GitHub suggesting to compare and make a pull request.
    :width: 80%
    :class: with-border
@@ -106,7 +106,7 @@ GitHub will notice a recently changed branch and offer to make a pull request (c
 
 If the yellow box is not there, make sure you are on the branch you want to
 merge **from**:
-   :::{figure} img/merging/github-navigate-to-branch.png
+   :::{figure} own_branch.png
    :alt: Screenshot on GitHub where we navigate to the branch we wish to merge.
    :width: 80%
    :class: with-border
@@ -137,7 +137,7 @@ branches together.  We start the process of making one.
 
 :::::{tabs}
 ::::{group-tab} GitHub
-   :::{figure} img/merging/github-contribute.png
+   :::{figure} contribute.png
    :alt: Screenshot on GitHub where we get to the pull request process.
    :width: 80%
    :class: with-border
@@ -168,12 +168,13 @@ and that it contains the changes that you meant to merge.
 :::::{tabs}
 ::::{group-tab} GitHub
 Things to check:
-- Base repository: this should be your own
+- Base repository: this should be your own and not `balmorelcommunity`
 - Title: make it descriptive
 - Description: make it informative
 - Scroll down to see commits: are these the ones you want to merge?
-- Scroll down to see the changes: are these the ones you want to merge?
-   :::{figure} img/merging/github-comparing-changes.png
+- Scroll down to see th
+e changes: are these the ones you want to merge?
+   :::{figure} comparing_changes.png
    :alt: Screenshot on GitHub where we verify the changes we want to merge.
    :width: 80%
    :class: with-border
@@ -194,7 +195,7 @@ If you are working locally, continue to step 5.
 :::::
 
 
-### (4) Create the pullhfbjhsbf request
+### (4) Create the pull request
 
 We actually create the pull request.  Don't forget to navigate to the Network
 view after opening the pull request.  Note that the changes proposed in the
@@ -261,7 +262,7 @@ $ git status
 
 In this case we merge the `new-tutorial` branch into our current branch:
 ```console
-$ git merge new-tutorial
+$ git merge my-branch
 ```
 ::::
 :::::
@@ -278,15 +279,8 @@ also part of the branch where we have merged to.
 :::::{tabs}
 ::::{group-tab} GitHub
 One way to delete the branch is to click on the "Delete branch" button after the pull
-request is merged:
-   :::{figure} img/merging/github-merged.png
-   :alt: Screenshot on GitHub suggesting us to delete a branch after it has been merged.
-   :width: 80%
-   :class: with-border
-   :::
-
-But what if we forgot? Then navigate to the branch view:
-   :::{figure} img/merging/github-branches.png
+request is merged. But what if we forgot? Then navigate to the branch view:
+   :::{figure} branch_view.png
    :alt: Screenshot on GitHub where we navigate to the branches view.
    :width: 80%
    :class: with-border
@@ -305,12 +299,12 @@ Verify which branches are merged to the current branch:
 $ git branch --merged
 
 * main
-  new-tutorial
+  my-branch
 ```
 
 This means that it is safe to delete the `new-tutorial` branch:
 ```console
-$ git branch -d new-tutorial
+$ git branch -d my-branch
 ```
 
 Verify then that the branch is gone but that the commits are still there:
@@ -336,13 +330,11 @@ should be the upstream one.
 In other words, you now send a pull request **across repositories**: from your fork
 to the original repository.
 
-Another thing that is different now is that you might not have permissions to
-merge the pull request.  We can then together review and browse the pull
-request.
+In case you try to merge into the `main` upstream repository, you will see that you do not have permission for that. This is to protect the repository from unwanted changes. You can still create a pull request, which will then get reviewed from members of the `balmorelcommunity`.
 ::::
 
 ::::{group-tab} VS Code
-Not described. We will return to this when we discuss collaboration using GitHub.
+Not described.
 
 You would create a new branch locally like above, push it to GitHub to your own
 user's repository, and from there open a pull request towards the upstream
@@ -350,7 +342,7 @@ repository.
 ::::
 
 ::::{group-tab} Command line
-Not described. We will return to this when we discuss collaboration using GitHub.
+Not described.
 
 You would create a new branch locally like above, push it to GitHub to your own
 user's repository, and from there open a pull request towards the upstream
@@ -366,4 +358,3 @@ repository.
   your own work. Being able to merge branches also **forms the basis for collaboration**.
 - Branches which are merged to other branches are safe to delete, since we only
   delete the "sticky note" next to a commit, not the commits themselves.
-  --->
