@@ -1,9 +1,10 @@
 (intro)= 
 
+# Introduction to version control with Git and GitHub
+
 ```{toctree}
 :maxdepth: 1
-:caption: Balmorel GitHub Tutorial
-:hidden:
+
 browsing.md
 branching.md
 ```
