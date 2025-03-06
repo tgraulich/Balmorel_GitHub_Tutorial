@@ -181,7 +181,7 @@ $ git log --oneline
 :::::
 
 
-### (3) How can you browse the history of a single file?
+### (2) How can you browse the history of a single file?
 
 We see the history for the whole repository, but we can also see it
 for a single file.
@@ -210,7 +210,7 @@ $ git log OUTPUT_SUMMARY.inc
 :::::
 
 
-### (4) Which files creates the MainResults.gdx file?
+### (3) Which files creates the MainResults.gdx file?
 
 Version control makes it very easy to find all occurrences of a
 word or pattern. This is useful for things like finding where functions or
@@ -248,8 +248,7 @@ $ git grep -i 'execute_unload \"MainResults.gdx\"'       # case insensitive
 :::::
 
 
-### (5) In the `base/output/OUTPUT_SUMMARY.inc` file,
-   find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
+### (4) In the `base/output/OUTPUT_SUMMARY.inc` file, find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
 
 This is called the "annotate" or "blame" view. The name "blame"
 is very unfortunate, but it is the standard term for historical reasons
@@ -308,12 +307,11 @@ The goal is to:
 1. First create a new branch and then modify an
    existing file and commit the change.  Make sure that you now work **on your
    copy** of the repository. You can for example change the years in the simulation by editing the `Y.inc` file.
-1. In a new commit, modify the file again.
 1. Switch to the `main` branch and create a commit there.
 1. Browse the network and locate the commits that you just created ("Insights" -> "Network").
 1. Compare the branch that you created with the `main` branch. Can you find an easy way to see the differences?
 :::
-<!---
+
 The solution below goes over most of the answers, and you are
 encouraged to use it when the hints aren't enough - this is by
 design.
@@ -332,8 +330,7 @@ design.
 1. Make sure you are still on the `new-tutorial` branch (it should say
    it at the top), and click "Add file" → "Create new file" from the
    upper right.
-1. Enter a filename where it says "Name your file...".
-1. Share some Git or programming trick you like.
+1. Changes some file.
 1. Click "Commit changes"
 1. Enter a commit message. Then click "Commit
    changes".
@@ -346,56 +343,28 @@ modification there.
 1. Make sure that you are on the main branch.
 1. Version control button on left sidebar → Three dots in upper right of source control → Branch → Create branch.
 1. VS Code automatically switches to the new branch.
-4. Create a new file.
+4. Changes some file.
 4. In the version control sidebar, click the `+` sign to add the file for the next commit.
 4. Enter a brief message and click "Commit".
 ::::
 
 ::::{group-tab} Command line
-Create a new branch called `new-tutorial` from `main` and switch to it:
+Create a new branch called `my-branch` from `main` and switch to it:
 ```console
-$ git switch --create new-tutorial main
+$ git switch --create my-branch main
 ```
 
-Then create the new file. Finally add and commit the file:
+Then change a file. Finally add and commit the file:
 ```console
-$ git add tutorial.md  # or a different file name
-$ git commit -m "sharing a programming trick"
+$ git add Y.inc  # or a different file name
+$ git commit -m "Changing the years"
 ```
 ::::
 :::::
 
 
-### (2) Modify the file again with a new commit
 
-:::::{tabs}
-::::{group-tab} GitHub
-This is similar to before, but we click on the existing file to
-modify.
-
-1. Click on the file you added or modified previously.
-2. Click the edit button, the pencil icon at top-right.
-3. Follow the "Commit changes" instructions as in the previous step.
-::::
-
-::::{group-tab} VS Code
-Repeat as in the previous step.
-::::
-
-::::{group-tab} Command line
-Modify the file. Then commit the new change:
-```console
-$ git add tutorial.md
-$ git commit -m "short summary of the change"
-```
-
-Make sure to replace "short summary of the change" with a meaningful commit
-message.
-::::
-:::::
-
-
-### (3) Switch to the main branch and create a commit there
+### (2) Switch to the main branch and create a commit there
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -425,7 +394,7 @@ $ git commit -m "short summary of the change"
 :::::
 
 
-### (4) Browse the commits you just made
+### (3) Browse the commits you just made
 
 Let's look at what we did.  Now, the `main` and the new branches
 have diverged: both have some modifications. Try to find the commits
@@ -451,7 +420,7 @@ $ git log --graph --oneline --decorate --all  # if you didn't define git graph y
 :::::
 
 
-### (5) Compare the branches
+### (4) Compare the branches
 
 Comparing changes is an important thing we need to do.  When using the
 GitHub view only, this may not be so common, but we'll show it so that
@@ -462,7 +431,7 @@ it makes sense later on.
 ::::{group-tab} GitHub
 A nice way to compare branches is to add `/compare` to the URL of the repository,
 for example (replace USER):
-https://github.com/**USER**/planets/compare
+https://github.com/**USER**/Balmorel/compare
 ::::
 
 ::::{group-tab} VS Code
@@ -471,99 +440,17 @@ This seems to require an extension.  We recommend you use the command line metho
 
 ::::{group-tab} Command line
 ```console
-$ git diff main new-tutorial
+$ git diff main my-branch
 ```
 
 Try also the other way around:
 ```console
-$ git diff new-tutorial main
+$ git diff my-branch main
 ```
 
 Try also this if you only want to see the file names that are different:
 ```console
-$ git diff --name-only main new-tutorial
-```
-::::
-:::::
-
-
-### (6) Compare two arbitrary commits
-
-This is similar to above, but not only between branches.
-
-:::::{tabs}
-::::{group-tab} GitHub
-Following the `/compare`-trick above, one can compare commits on GitHub by
-adjusting the following URL:
-https://github.com/**USER**/planets/compare/**VERSION1**..**VERSION2**
-
-Replace `USER` with your username and `VERSION1` and `VERSION2` with a commit hash or branch name.
-Please try it out.
-::::
-
-::::{group-tab} VS Code
-Again, we recommend using the Command Line method.
-::::
-
-::::{group-tab} Command line
-First try this to get a short overview of the commits:
-```console
-$ git log --oneline
-```
-
-Then try to compare any two commit identifiers with `git diff`.
-::::
-:::::
-
-
-### (7) Renaming a branch
-
-:::::{tabs}
-::::{group-tab} GitHub
-
-Branch button → View all branches → three dots at right side → Rename branch.
-
-::::
-::::{group-tab} VS Code
-Version control sidebar → Three dots (same as in step 2) → Branch → Rename branch.  Make sure you are on the right branch before you start.
-::::
-
-::::{group-tab} Command line
-Renaming the current branch:
-```console
-$ git branch -m new-branch-name
-```
-
-Renaming a different branch:
-```console
-$ git branch -m different-branch new-branch-name
-```
-::::
-:::::
-
-
-### (8) Creating a tag
-
-Tags are a way to mark a specific commit as important, for example a release
-version. They are also like a sticky note, but they don't move when new
-commits are added.
-
-:::::{tabs}
-::::{group-tab} GitHub
-On the right side, below "Releases", click on "Create a new release".
-
-What GitHub calls releases are actually tags in Git with additional metadata.
-For the purpose of this exercise we can use them interchangeably.
-::::
-
-::::{group-tab} VS Code
-Version control sidebar → Three dots (same as in step 2) → Tags → Create tag.  Make sure you are on the expected commit before you do this.
-::::
-
-::::{group-tab} Command line
-Creating a tag:
-```console
-$ git tag -a v1.0 -m "New manuscript version for the pre-print"
+$ git diff --name-only main my-branch
 ```
 ::::
 :::::
@@ -578,8 +465,6 @@ can track several lines of work at once, and can compare their differences.
   of work and it's only you.
 - You could commit to branches if there are multiple lines of work at
   once, and you don't want them to interfere with each other.
-- Tags are useful to mark a specific commit as important, for example a
-  release version.
 - In Git, commits form a so-called "graph". Branches are tags in Git function
   like sticky notes that stick to specific commits. What this means for us is
   that it does not cost any significant disk space to create new branches.
@@ -589,7 +474,7 @@ can track several lines of work at once, and can compare their differences.
   `.gitignore` (more about this later: {ref}`practical-advice`).
 - Unsure on which branch you are or what state the repository is in?
   On the command line, use `git status` frequently to get a quick overview.
---->
+
 
 (merging)=
 
