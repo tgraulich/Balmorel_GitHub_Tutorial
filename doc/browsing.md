@@ -1,5 +1,6 @@
 (browsing)=
-## Creating a copy of the repository by "forking" and/or "cloning"
+
+# Creating a copy of the repository by "forking" and/or "cloning"
 
 A **repository** is a collection of files in one directory tracked by Git.  A
 GitHub repository is GitHub's copy, which adds things like access control,
