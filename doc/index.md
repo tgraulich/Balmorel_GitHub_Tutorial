@@ -845,3 +845,8 @@ repository.
 - Branches which are merged to other branches are safe to delete, since we only
   delete the "sticky note" next to a commit, not the commits themselves.
   --->
+
+```{toctree}
+:maxdepth: 1
+browsing.md
+```
