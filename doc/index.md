@@ -132,7 +132,6 @@ prepare questions. The hints are for the GitHub path in the browser.
    find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
    (Hint: "Blame" view in the file view)
 :::
-<!---
 The solution below goes over most of the answers, and you are
 encouraged to use it when the hints aren't enough - this is by
 design.
@@ -155,7 +154,7 @@ The most basic thing to look at is the history of commits.
 
 ::::{group-tab} GitHub
 Click on the timeline symbol in the repository view:
-  :::{figure} img/browsing/history.png
+  :::{figure} history.png
   :alt: Screenshot on GitHub of where to find the commit history
   :width: 100%
   :class: with-border
@@ -182,47 +181,6 @@ $ git log --oneline
 :::::
 
 
-### (2) Compare commit history with network graph
-
-The commit history we saw above looks linear: one commit after
-another.  But if we look at the network view, we see some branching and merging points.
-We'll see how to do these later.  This is another one of the
-basic Git views.
-
-:::::{tabs}
-::::{group-tab} GitHub
-In a new browser tab, open the "Insights" tab, and click on "Network".
-You can hover over the commit dots to see the person who committed and
-how they correspond with the commits in the other view:
-  :::{figure} img/browsing/network.png
-  :alt: Screenshot on GitHub of the network graph
-  :width: 100%
-  :class: with-border
-  :::
-::::
-
-::::{group-tab} VS Code
-We don't know how to do this without an extension. Try starting a terminal and using the
-"Command line" option.
-::::
-
-::::{group-tab} Command line
-This is a useful command to browse the network of commits locally:
-```console
-$ git log --graph --oneline --decorate --all
-```
-
-To avoid having to type this long command every time, you can define an alias (shortcut):
-```console
-$ git config --global alias.graph "log --graph --oneline --decorate --all"
-```
-
-From then on, you can use `git graph` to see the network graph.
-::::
-
-:::::
-
-
 ### (3) How can you browse the history of a single file?
 
 We see the history for the whole repository, but we can also see it
@@ -231,12 +189,12 @@ for a single file.
 :::::{tabs}
 
 ::::{group-tab} GitHub
-Navigate to the file view: Main page → simulate.py.
+Navigate to the file view: `Main page → /base/output/OUTPUT_SUMMARY.inc`.
 Click the "History" button near the top right.
 ::::
 
 ::::{group-tab} VS Code
-Open simulate.py file in the editor.  Under the file browser,
+Open `OUTPUT_SUMMARY.inc` file in the editor.  Under the file browser,
 we see a "Timeline" view there.
 ::::
 
@@ -245,14 +203,14 @@ The `git log` command can take a filename and provide the log of only
 a single file:
 
 ```
-$ git log simulate.py
+$ git log OUTPUT_SUMMARY.inc
 ```
 ::::
 
 :::::
 
 
-### (4) Which files include the word "position"?
+### (4) Which files creates the MainResults.gdx file?
 
 Version control makes it very easy to find all occurrences of a
 word or pattern. This is useful for things like finding where functions or
@@ -261,7 +219,7 @@ variables are defined or used.
 :::::{tabs}
 ::::{group-tab} GitHub
 We go to the main file view.  We click the Search magnifying
-class at the very top, type "position", and click enter. We see every
+class at the very top, type `execute_unload "MainResults.gdx"`, and click enter. We see every
 instance, including the context.
 
 :::{admonition} Searching in a forked repository will not work instantaneously!
@@ -281,16 +239,17 @@ click to see the usage in context.
 ::::{group-tab} Command line
 `grep` is the command line tool that searches for lines matching a term
 ```console
-$ git grep position          # only the lines
-$ git grep -C 3 position     # three lines of context
-$ git grep -i position       # case insensitive
+$ git grep 'execute_unload \"MainResults.gdx\"'          # only the lines
+$ git grep -C 3 'execute_unload \"MainResults.gdx\"'     # three lines of context
+$ git grep -i 'execute_unload \"MainResults.gdx\"'       # case insensitive
 ```
 ::::
 
 :::::
 
 
-### (5) Who modified a particular line last and when?
+### (5) In the `base/output/OUTPUT_SUMMARY.inc` file,
+   find out when the parameter `STORAGE_LEVEL` was added and **in which commit**.
 
 This is called the "annotate" or "blame" view. The name "blame"
 is very unfortunate, but it is the standard term for historical reasons
@@ -312,12 +271,12 @@ line version, after opening a terminal.
 ::::{group-tab} Command line
 These two commands are similar but have slightly different output.
 ```console
-$ git annotate simulate.py
-$ git blame simulate.py
+$ git annotate base/output/OUTPUT_SUMMARY.inc
+$ git blame base/output/OUTPUT_SUMMARY.inc
 ```
 ::::
 
-:::::--->
+:::::
 ## Creating branches and commits
 
 The first and most basic task to do in Git is **record changes** using
